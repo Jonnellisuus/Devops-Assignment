@@ -22,8 +22,9 @@ jobs:
     needs: build
     strategy:
       matrix:
-        os: [windows-2016]
-        node-version: [14.x]
+        os: [ubuntu-lastest, windows-2016]
+        node-version: [12.x, 14.x]
+
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -33,12 +34,11 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: webpack artifacts
-          path: dist
+          path: public
       - name: npm install, and test
         run: |
           npm install
           npm run test-headless   
-          #npm run e2e
         env:
           CI: true
 
