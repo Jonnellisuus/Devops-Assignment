@@ -1,0 +1,10 @@
+<div class="toolbar">
+  <mat-toolbar color="primary">
+    <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+    <mat-menu class="openedMenu" #menu="matMenu">
+      <button routerLink="calculator" mat-menu-item>Calculator</button>
+      <button routerLink="cinema" mat-menu-item>Cinema</button>
+      <button routerLink="forex" mat-menu-item>Forex</button>
+    </mat-menu>
+  </mat-toolbar>
+</div>

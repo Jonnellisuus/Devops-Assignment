@@ -1,0 +1,9 @@
+mat-icon {
+  cursor: pointer;
+}
+
+.button {
+  position: absolute;
+  right: 1%;
+  top: 2%;
+}

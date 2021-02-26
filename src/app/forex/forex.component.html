@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-title>{{forexRates.date}} Currency Exchange Rates</mat-card-title>
+  <mat-form-field>
+    <mat-label>Select base currency</mat-label>
+    <mat-select [(ngModel)]="selectedForex" (ngModelChange)="onChange()">
+      <mat-option *ngFor="let f of forexList" [value]="f">
+        {{f}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <label>
+      <input matInput type="text"
+             #amount="ngModel" name="amount"
+             pattern="^[0-9]*$"
+             placeholder="Select amount of {{selectedForex}}"
+             [(ngModel)]="inputAmount"
+             (ngModelChange)="onChange()">
+    </label>
+    <mat-error *ngIf="amount.invalid">Please, input numbers!</mat-error>
+  </mat-form-field>
+  <mat-icon>arrow_forward</mat-icon>
+  <mat-form-field>
+    <mat-label>Select target currency</mat-label>
+    <mat-select [(ngModel)]="targetForex" (ngModelChange)="onChange()">
+      <mat-option *ngFor="let f of forexList" [value]="f">
+        {{f}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <label>
+      <input matInput placeholder="Amount in {{targetForex}}" readonly  [(ngModel)]="targetAmount">
+    </label>
+  </mat-form-field>
+</mat-card>

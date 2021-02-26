@@ -1,0 +1,12 @@
+<mat-card class="container">
+  <label class="display">
+    <input disabled type="text" [(ngModel)]="operation">
+  </label>
+  <mat-grid-list class="calculatorButtons" cols="4" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let button of buttons">
+      <button mat-raised-button (click)="addValue(button)">{{button}}</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+
+<router-outlet></router-outlet>
