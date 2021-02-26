@@ -8,20 +8,20 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ForexService {
-  ratesSource = 'https://api.exchangeratesapi.io/latest';
+  url = 'https://api.exchangeratesapi.io/latest';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getRatesData(): Observable<any> {
-    return this.httpClient.get(this.ratesSource).pipe(map(response => {
+    return this.httpClient.get(this.url).pipe(map(response => {
       return response as ForexRates;
     }));
   }
 
   getData(currency): Observable<any> {
     const param = new HttpParams().set('base', String(currency));
-    return this.httpClient.get(this.ratesSource, {params: param}).pipe(map( response => {
+    return this.httpClient.get(this.url, {params: param}).pipe(map( response => {
       return response as ForexRates;
     }));
   }
