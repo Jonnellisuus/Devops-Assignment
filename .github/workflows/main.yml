@@ -34,7 +34,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: webpack artifacts
-          path: public
+          path: dist
       - name: npm install, and test
         run: |
           npm install
