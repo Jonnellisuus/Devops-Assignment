@@ -1,3 +1,4 @@
+/*
 import { TestBed } from '@angular/core/testing';
 
 import {CinemaService} from './cinema.service';
@@ -42,3 +43,4 @@ describe('MovieNewsService', () => {
     });
   });
 });
+*/
